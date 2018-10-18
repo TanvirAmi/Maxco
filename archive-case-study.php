@@ -30,27 +30,26 @@ get_header();
       <a href="<?php the_permalink(); ?>">
       <div class="section-padding wow slideInUp <?php echo esc_attr($class1); ?>">
         <div class="section-absolute-bg <?php echo esc_attr($class2); ?>" data-wow-delay="0.5s" style="background-image:url(<?php echo esc_url($image_src); ?>);"></div>
-        <div class="container">
-          <div class="row">
-            <span class="case-title">
-              <?php
-              $terms = wp_get_post_terms($post->ID, 'type');
-              $y = 0;
-              foreach ($terms as $term) {
-                $y++;
-                if($y > 1){ echo ' | '; }
-                  echo $term->name;
-              }
-              ?>
-            </span>
+
+
             <div class="col-md-6 <?php echo esc_attr($class3); ?>">
+              <span class="case-title">
+                <?php
+                $terms = wp_get_post_terms($post->ID, 'type');
+                $y = 0;
+                foreach ($terms as $term) {
+                  $y++;
+                  if($y > 1){ echo ', '; }
+                    echo $term->name;
+                }
+                ?>
+              </span>
               <div class="boxed-content">
-                <h2><?php the_title(); ?></h2>
+                <h2><?php //the_title(); ?></h2>
                 <p><?php the_excerpt(); ?></p>
               </div>
             </div>
-          </div>
-        </div>
+
       </div>
       </a>
       <?php $i++; endwhile; wp_reset_postdata(); ?>
