@@ -122,7 +122,7 @@ get_header();
               echo $term->name;
           }
           ?></p>
-        <div class="author text-center">
+        <div class="author">
           <span class="m-border"></span>
           <p class="case-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 
