@@ -1,0 +1,526 @@
+/*./Dropdown Css*/
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sf-menu li {
+    position: relative;
+}
+.sf-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 17;
+    z-index: 99;
+}
+.sf-menu > li {
+    float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+    display: block;
+}
+
+.sf-menu a {
+    display: block;
+    position: relative;
+}
+.sf-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+    float: right;
+}
+.sf-menu ul {
+    min-width: 12em; /* allow long menu items to determine submenu width */
+    *width: 12em; /* no auto sub width for IE7, see white-space comment below */
+    background: #fff;
+}
+.sf-menu a {
+		color: #000;
+		font-size: 15px;
+    padding: .15em 1.5em;
+    text-decoration: none;
+    zoom: 1; /* IE7 */
+}
+.sf-menu a:hover {
+    color: #000;
+		text-decoration: none;
+}
+.sf-menu li {
+    white-space: nowrap; /* no need for Supersubs plugin */
+    *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+.sf-menu ul li {
+    background: transparent;
+}
+.sf-menu ul ul li {
+    background: #fff;
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+    /* background: #CFDEFF; */
+    /* only transition out, not in */
+    -webkit-transition: none;
+    transition: none;
+		color: #cc3838;
+		text-decoration: none;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+    padding-right: 2.5em;
+    *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+/*
+.sf-arrows .sf-with-ul:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    margin-top: -3px;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    border-top-color: #fff;
+}
+*/
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+    border-top-color: white; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+    margin-top: -5px;
+    margin-right: -3px;
+    border-color: transparent;
+    border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-left-color: rgba(255,255,255,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+    border-left-color: white;
+}
+
+
+/* superfish navbar */
+
+/*** adding the class sf-navbar in addition to sf-menu creates an all-horizontal nav-bar menu ***/
+.sf-navbar {
+    background: #BDD2FF;
+    position: relative;
+    margin-bottom: 5em;
+}
+/* provide background colour for submenu strip */
+/* you should just set the menu's container bg colour rather than use pseudo-elements */
+.sf-navbar:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background-color: #BDD2FF;
+    height: 200%;
+    width: 100%;
+}
+.sf-navbar ul {
+    box-shadow: none;
+}
+.sf-navbar li {
+    background: #AABDE6;
+    position: static;
+}
+.sf-navbar > li > a,
+.sf-navbar > li > ul > li > a {
+    border: none;
+}
+.sf-navbar > li > ul {
+    min-width: 36em; /* set this to whatever suits your design */
+}
+.sf-navbar ul li {
+    background: #BDD2FF;
+    position: relative;
+}
+.sf-navbar ul ul {
+    left: 0;
+    top: 100%;
+}
+.sf-navbar ul ul li {
+    width: 100%;
+}
+.sf-navbar > li > ul > li {
+    float: left;
+}
+.sf-navbar li.current {
+    background: #BDD2FF;
+}
+.sf-navbar li:hover,
+.sf-navbar li.sfHover,
+.sf-navbar ul li.current {
+    background: #BDD2FF;
+}
+.sf-navbar ul li:hover,
+.sf-navbar ul li.sfHover,
+.sf-navbar ul ul li {
+    background: #D1DFFF;
+}
+.sf-navbar ul ul li:hover,
+.sf-navbar ul ul li.sfHover,
+.sf-navbar ul ul li.current {
+    background: #E6EEFF;
+}
+.sf-navbar ul li.current > a {
+    font-weight: bold;
+}
+
+/*** point all arrows down ***/
+.sf-arrows.sf-navbar ul .sf-with-ul:after {
+    margin-top: -3px;
+    margin-right: 0;
+    border-color: transparent;
+    border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-top-color: rgba(255,255,255,.5);
+}
+
+.sf-arrows.sf-navbar ul > li > .sf-with-ul:focus:after,
+.sf-arrows.sf-navbar ul > li:hover > .sf-with-ul:after,
+.sf-arrows.sf-navbar ul > .sfHover > .sf-with-ul:after {
+    border-color: transparent;
+    border-top-color: white;
+}
+.breadcumb-area{
+  	background: url(assets/images/background-pattern.jpg);
+}
+
+/**
+ * Owl Carousel v2.2.0
+ * Copyright 2013-2016 David Deutsch
+ * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y; }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    -webkit-transform-style: preserve-3d; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item img.owl-lazy {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 100ms ease;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  -webkit-transform: scale(1.3, 1.3);
+      -ms-transform: scale(1.3, 1.3);
+          transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+  /*!
+   * SlickNav Responsive Mobile Menu v1.0.10
+   * (c) 2016 Josh Cope
+   * licensed under MIT
+   */
+  .slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: 0.438em 0.625em 0.438em 0.625em;
+    line-height: 1.125em;
+    cursor: pointer; }
+    .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+      margin-top: 0.188em; }
+
+  .slicknav_menu {
+    *zoom: 1; }
+    .slicknav_menu .slicknav_menutxt {
+      display: block;
+      line-height: 1.188em;
+      float: left; }
+    .slicknav_menu .slicknav_icon {
+      float: left;
+      width: 1.125em;
+      height: 0.875em;
+      margin: 0.188em 0 0 0.438em; }
+      .slicknav_menu .slicknav_icon:before {
+        background: transparent;
+        width: 1.125em;
+        height: 0.875em;
+        display: block;
+        content: "";
+        position: absolute; }
+    .slicknav_menu .slicknav_no-text {
+      margin: 0; }
+    .slicknav_menu .slicknav_icon-bar {
+      display: block;
+      width: 1.125em;
+      height: 0.125em;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+      -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+    .slicknav_menu:before {
+      content: " ";
+      display: table; }
+    .slicknav_menu:after {
+      content: " ";
+      display: table;
+      clear: both; }
+
+  .slicknav_nav {
+    clear: both; }
+    .slicknav_nav ul {
+      display: block; }
+    .slicknav_nav li {
+      display: block; }
+    .slicknav_nav .slicknav_arrow {
+      font-size: 0.8em;
+      margin: 0 0 0 0.4em; }
+    .slicknav_nav .slicknav_item {
+      cursor: pointer; }
+      .slicknav_nav .slicknav_item a {
+        display: inline; }
+    .slicknav_nav .slicknav_row {
+      display: block; }
+    .slicknav_nav a {
+      display: block; }
+    .slicknav_nav .slicknav_parent-link a {
+      display: inline; }
+
+  .slicknav_brand {
+    float: left; }
+
+  .slicknav_menu {
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #4c4c4c;
+    padding: 5px; }
+    .slicknav_menu * {
+      box-sizing: border-box; }
+    .slicknav_menu .slicknav_menutxt {
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 1px 3px #000; }
+    .slicknav_menu .slicknav_icon-bar {
+      background-color: #fff; }
+
+  .slicknav_btn {
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #222; }
+
+  .slicknav_nav {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em;
+    list-style: none;
+    overflow: hidden; }
+    .slicknav_nav ul {
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      margin: 0 0 0 20px; }
+    .slicknav_nav .slicknav_row {
+      padding: 5px 10px;
+      margin: 2px 5px; }
+      .slicknav_nav .slicknav_row:hover {
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background: #ccc;
+        color: #fff; }
+    .slicknav_nav a {
+      padding: 5px 10px;
+      margin: 2px 5px;
+      text-decoration: none;
+      color: #fff; }
+      .slicknav_nav a:hover {
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background: #ccc;
+        color: #222; }
+    .slicknav_nav .slicknav_txtnode {
+      margin-left: 15px; }
+    .slicknav_nav .slicknav_item a {
+      padding: 0;
+      margin: 0; }
+    .slicknav_nav .slicknav_parent-link a {
+      padding: 0;
+      margin: 0; }
+
+  .slicknav_brand {
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 7px 12px;
+    height: 44px; }
