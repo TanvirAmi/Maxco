@@ -25,7 +25,7 @@ get_header();
               style="background-image:url(<?php echo esc_url($image_src); ?>);" data-wow-delay="0.5s">
       				<!-- <a href="#"> -->
       					<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
-      						<span id="tag" class="text-white"><?php the_title(); ?></span>
+      						<span id="tag"><?php the_title(); ?></span>
       						<p class="text-white"><?php the_excerpt(); ?></p>
       					</div>
       			<!--	</a> -->
@@ -51,13 +51,13 @@ get_header();
           ?>
           <?php
           if ($i == 1 || $i == 2 || $i == 5 || $i == 6 || $i == 9 || $i == 10){?>
-            <div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-6 single-filter-content"  style="background-image:url(<?php echo esc_url($image_src); ?>);">
+            <div id="bottom" class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-12 single-filter-content"  style="background-image:url(<?php echo esc_url($image_src); ?>);">
 
     				</div>
 
-    				<div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.5s">
+    				<div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-12 wow zoomIn" data-wow-delay="0.5s">
             <!--  <a href="#"> -->
-    					<span id="tag" class="text-black"><?php the_title(); ?></span>
+    					<span class="tag text-black"><?php the_title(); ?></span>
               <div class="d-flex align-items-center justify-content-center h-100" id="rec-ex">
                     <?php the_excerpt(); ?>
               </div>
@@ -67,15 +67,15 @@ get_header();
             <?php
           }
           else{?>
-            <div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.5s">
+            <div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-12 wow zoomIn" data-wow-delay="0.5s">
               <!-- <a href="#"> -->
-              <span id="tag" class="text-black"><?php the_title(); ?></span>
+              <span class="tag text-black"><?php the_title(); ?></span>
               <div class="d-flex align-items-center justify-content-center h-100" id="rec-ex">
                     <?php the_excerpt(); ?>
               </div>
               <!-- </a> -->
             </div>
-            <div class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-6 single-filter-content" data-myorder="3" style="background-image:url(<?php echo esc_url($image_src); ?>);">
+            <div id="bottom" class="mix category-1 category-5 col-lg-3 col-md-4 col-sm-12 single-filter-content" data-myorder="3" style="background-image:url(<?php echo esc_url($image_src); ?>);">
 
     				</div>
           <?php

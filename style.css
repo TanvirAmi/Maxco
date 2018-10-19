@@ -2384,9 +2384,18 @@ footer .footer-nav li a:hover {
 .section-padding:hover{
   background: #C9C2B9;
 }
-#tag{
- position: absolute;
-  top: 14px;
-  left: 10px;
-  right: auto;
+#tag {
+    position: absolute;
+    top: 10%;
+    left: 100px;
+    right: auto;
+}
+.tag {
+    letter-spacing: 0.1em;
+    font-size: 20px;
+  	color: #000;
+		position: absolute;
+    top: 10%;
+    left: 50px;
+    right: auto;
 }
