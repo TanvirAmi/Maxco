@@ -68,7 +68,7 @@ $(document).ready(function(){
         dot: false,
         //items: 3,
         margin: 30,
-        autoplay:true,
+        autoplay:false,
         autoplayTimeout:2000,
         navSpeed: 20000,
         //dragEndSpeed: 4000,
@@ -106,9 +106,12 @@ $(document).ready(function(){
 		        //$(".smooth").text('MM');
 						//{
      				$("#my_image").attr('src','http://tanvir.pro/dev/wp-content/uploads/2018/10/Maxco_2x.png');
+					//	$(".sub-menu").attr('display','block');
+						$(".sub-menu").css({display: "block"});
 		    }
 		    else {
 		        $("#my_image").attr('src','http://tanvir.pro/dev/wp-content/uploads/2018/09/maxco.png');
+						$(".sub-menu").css({display: "none"});
 		    }
 			});
 		});

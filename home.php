@@ -112,6 +112,7 @@ get_header();
       if ( $query->have_posts() ) : ?>
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <div class="single-case">
+        <div class="case-type">
         <p>  <?php
 
           $terms = wp_get_post_terms($post->ID, 'type');
@@ -122,6 +123,7 @@ get_header();
               echo $term->name;
           }
           ?></p>
+        </div>
         <div class="author">
           <span class="m-border"></span>
           <p class="case-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
